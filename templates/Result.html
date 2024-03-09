@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    {% load static %}
+    <title>Result</title>
+    <style>
+        .card{
+            width: 90%;
+            border-color: black;
+            font-family: sans-serif;
+            margin-left: 5%;
+        }
+        .thanks{
+            font-size: large;
+            width: 60%;
+        }
+        .gif{
+            size: 60%;
+            width: 20%;
+        }
+        .button{
+          color:#3b43d6;
+          text-decoration:none;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="card mt-5">
+        <div class="card-body">
+          
+           <table class="table table-info">
+            <thead>
+              <tr>             
+                <th>Course</th>
+                <th>Total Marks</th>
+              </tr>
+            </thead>
+             {% for data in allMarks %}
+            <tr>
+              <td> {{ data.course }}</td>
+              <td>{{ data.totalmarks }}</td> 
+            </tr>
+            {% endfor %} 
+          
+          </table>   
+          <br><hr><br>
+          <div class="container">
+            <div class="row align-items-start">
+                <div class="thanks">
+                  <div class="col-sm-12 col-md-12 col-lg-10">
+                    <p>We think you enjoy this quiz sessions.You tested yourself to the best level.We hope this knowledge will always remain on your brain.You have succesfully test yourself for the interview sessions.Now, work hard to crack the interviews. Learn more about the programming languages.We hope you will crack interviews too soon.Thanks for coming here to gain your knowledge and test yourself.</p>
+                    <p>Come again and test yourself here.</p>
+                    <p>Thank You,</p>
+                    <p>Developers of Tech Quiz.</p>
+                    <button  class="button"><a style="text-decoration: none;" href="/Studentviewquiz">Back to Home</a></button>
+                  </div>
+                </div> 
+                <div class="gif">
+                    <div class="col-sm-12 col-md-12 col-lg-8">
+                        <img src="{% static 'thanks.jpg' %}" alt="">           
+                    </div>
+                </div>
+                
+            </div>
+        </div> 
+   
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>
